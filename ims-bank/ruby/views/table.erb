@@ -1,1 +1,20 @@
-<p>Replace this with your summary table</p>
+<table>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Total Checking Balance</th>
+    <th>Total Savings Balance</th>
+    <th>Total Balance</th>
+  </tr>
+</thead>
+<tbody>
+  <% customer_summary.each do |customer_id, summary| %>
+    <tr>
+      <td><%= summary['name'] %></td>
+      <td><%= sprintf('%.2f', summary['checking_balance']) %></td>
+      <td><%= sprintf('%.2f', summary['savings_balance']) %></td>
+      <td><%= sprintf('%.2f', summary['total_balance']) %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
